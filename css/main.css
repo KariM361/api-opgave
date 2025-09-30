@@ -19,6 +19,31 @@ img {
   padding-right: 1rem;
   object-fit: cover;
 }
+.img-container {
+  position: relative;
+  display: inline-block;
+  margin: 0.5rem;
+}
+ 
+.img-container img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+ 
+.img-text {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  color: white;
+  background: rgba(0,0,0,0.5);
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.2rem 0;
+  font-family: "Montserrat", sans-serif;
+}
+ 
 
 footer{
     background-color: #b3abab;
