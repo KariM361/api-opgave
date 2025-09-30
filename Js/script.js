@@ -1,4 +1,4 @@
-fetch('https://dog.ceo/api/breeds/image/random/3')
+fetch('https://dog.ceo/api/breeds/image/random/50')
   .then(response => response.json())
   .then(data => {
     view(data);
@@ -9,10 +9,10 @@ fetch('https://dog.ceo/api/breeds/image/random/3')
 
 function view(data) {
   const output = document.getElementById('output');
-  // Lav HTML for billederne
-  const imagesHtml = data.message.map(url => `<img src="${url}" alt="Dog" style="max-width:200px;">`).join('');
+  // Tilføj klassen "dog-image" til hvert billede
+  const imagesHtml = data.message.map(url => `<img src="${url}" alt="Dog" id="image">`).join('');
   output.innerHTML = `
-    <h2>Hundebilleder</h2>
+    <h2>Dog pictures</h2>
     ${imagesHtml}
   `;
 }
