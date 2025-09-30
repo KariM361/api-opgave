@@ -1,9 +1,12 @@
-fetch('https://dog.ceo/api/breeds/image/random/50')
-  .then(response => response.json())
-  .then(data => {
+//starter en netværksanmodning
+fetch('https://dog.ceo/api/breeds/image/random/50') 
+//håndtere det rå svar fra serveren
+.then(response => response.json()) // =>response.json() (konvaterer svaret til et javascript-objekt.)
+ //adgang til den faktiske  data
+  .then(data => { 
     view(data);
   })
-  .catch(error => {
+  .catch(error => { //fanger fejl(server og netværk)
     console.error('Fejl:', error);
   });
    
@@ -15,9 +18,9 @@ function view(data) {
       const match = url.match(/breeds\/([a-zA-Z-]+)\//);
       const breed = match ? match[1].replace('-', ' ') : 'Ukendt';
       return `
-        <div class="img-container">
+        <div id="img-container">
           <img src="${url}" alt="Dog image">
-          <div class="img-text">${breed.charAt(0).toUpperCase() + breed.slice(1)}</div>
+          <div id="img-text">${breed.charAt(0).toUpperCase() + breed.slice(1)}</div>
         </div>
       `;
     })
