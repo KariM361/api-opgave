@@ -1,13 +1,15 @@
 // ligges body, header, h1-h6.
 
+@use 'variabler';
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 header {
-  background-color: #b3abab;
+  background-color:$light-grey;
 }
 
 body {
-  background-color: #d43eb428;
+  background-color:$light-pink;
   font-family: "Playfair Display", serif;
 }
 
