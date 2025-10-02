@@ -1,4 +1,4 @@
-
+//controller code.
 export default async function getDogImages(count){
 
 
