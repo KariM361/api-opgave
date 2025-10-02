@@ -1,18 +1,17 @@
-//starter en netværksanmodning
-fetch('https://dog.ceo/api/breeds/image/random/50') 
-//håndtere det rå svar fra serveren
-.then(response => response.json()) // =>response.json() (konvaterer svaret til et javascript-objekt.)
- //adgang til den faktiske  data
-  .then(data => { 
-    view(data);
-  })
-  .catch(error => { //fanger fejl(server og netværk)
-    console.error('Fejl:', error);
-  });
+import getDogImages from "./module/api.js"
+//importerer funktionen getDogImages fra din api.js modulfil.
+getDogImages( 15)
+.then((data)=>{
+  view(data)
+})
+//kalder getDogImages med tallet 15 (henter 15 billeder).
+//når billederne er hentet, kaldes view funktionen med data.
+
+
    
 function view(data) {
   const output = document.getElementById('output');
-  output.innerHTML = data.message
+  output.innerHTML = data
     .map((url, i) => {
       // Udtræk racen fra URL'en
       const match = url.match(/breeds\/([a-zA-Z-]+)\//);
@@ -24,6 +23,6 @@ function view(data) {
         </div>
       `;
     })
-    .join('');
+    .join('');//samler alle Html strenge til en stor streng og indsætter det i output-elementet.
 }
 
